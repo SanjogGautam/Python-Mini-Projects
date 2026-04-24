@@ -5,17 +5,19 @@ quiz_data = {
     "Which district am I currently staying in?": "kathmandu",
     "Which district is my village located in?": "parbat"
 }
-
 print("*" * 10 + " Quiz Starts " + "*" * 10)
 counter = 0
+try:
+    for question, correct_answer in quiz_data.items():
+        user_answer = input(f"{question} = ").lower()
+        if user_answer == correct_answer:
+            print("Correct!")
+            counter += 1
+        else:
+            print(f"Wrong! (Answer was: {correct_answer})")
+except Exception as e:
+    print(f"You have an error= {e}")
+finally:
+    print("*" * 10 + f" Your score = {counter} " + "*" * 10)
 
-for question, correct_answer in quiz_data.items():
-    user_answer = input(f"{question} = ")
-    
-    if user_answer.lower() == correct_answer:
-        print("Correct!")
-        counter += 1
-    else:
-        print(f"Wrong! (Answer was: {correct_answer})")
 
-print("*" * 10 + f" Your score = {counter} " + "*" * 10)
