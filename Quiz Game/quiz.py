@@ -15,8 +15,8 @@ try:
             counter += 1
         else:
             print(f"Wrong! (Answer was: {correct_answer})")
-except Exception as e:
-    print(f"You have an error= {e}")
+except ValueError:
+    print(f"You have entered wrong input its other than number")
 finally:
     print("*" * 10 + f" Your score = {counter} " + "*" * 10)
 
